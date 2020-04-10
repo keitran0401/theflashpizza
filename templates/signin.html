@@ -1,0 +1,125 @@
+{% extends "layout.html" %}
+
+{% block body %}
+<div class="row my-4">
+    <div class="col-lg-4"></div>
+    <div class="col-lg-4 d-flex flex-column align-items-center">
+        <h1>Sign in</h1>
+        <p>Subscribers create a digital account to access all website content, our apps and to manage your newsletter
+            preferences.</p>
+        <p>Non-subscribers / print-only subscribers register here to access five free articles each month and/or to
+            sign up for one or more of our newsletters.</p>
+    </div>
+    <div class="col-lg-4"></div>
+
+</div>
+<div class="row">
+    <div class="col-lg-4"></div>
+    <div class="col-lg-4 jumbotron text-dark">
+        <nav class="my-4">
+            <div class="nav nav-tabs" id="nav-tab" role="tablist">
+                <a class="nav-item nav-link active" id="sign-in-tab" data-toggle="tab" href="#sign-in" role="tab"
+                    aria-controls="sign-in" aria-selected="true">Sign In</a>
+                <a class="nav-item nav-link" id="sign-up-tab" data-toggle="tab" href="#sign-up" role="tab"
+                    aria-controls="sign-up" aria-selected="false">Doesn't have an account? Sign Up</a>
+            </div>
+        </nav>
+
+        <div class="tab-content" id="nav-tabContent">
+            <div class="tab-pane fade show active" id="sign-in" role="tabpanel" aria-labelledby="sign-in-tab">
+                <form class="needs-validation" action="/register" method="POST">
+                    <div class="form-group">
+                        <label for="email">E-mail address</label>
+                        <input type="email" class="form-control" id="email" name="email" required
+                            aria-describedby="emailHelp">
+                        <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone
+                            else.</small>
+                    </div>
+                    <div class="form-group">
+                        <label for="password">Password</label>
+                        <input type="password" class="form-control" id="password" name="password" required>
+                    </div>
+                    <div class="form-group form-check">
+                        <input type="checkbox" class="form-check-input" id="remember">
+                        <label class="form-check-label" for="remember">Remember me</label>
+                    </div>
+                    <div class="navbar-brand h1" style="font-family: 'Open Sans', 'Helvetica Neue' , 'sans-serif';">
+                        <svg class="bi bi-alarm-fill" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path fill-rule="evenodd"
+                                d="M5.5.5A.5.5 0 016 0h4a.5.5 0 010 1H9v1.07a7.002 7.002 0 013.537 12.26l.817.816a.5.5 0 01-.708.708l-.924-.925A6.967 6.967 0 018 16a6.967 6.967 0 01-3.722-1.07l-.924.924a.5.5 0 01-.708-.708l.817-.816A7.002 7.002 0 017 2.07V1H5.999a.5.5 0 01-.5-.5zM.86 5.387A2.5 2.5 0 114.387 1.86 8.035 8.035 0 00.86 5.387zM13.5 1c-.753 0-1.429.333-1.887.86a8.035 8.035 0 013.527 3.527A2.5 2.5 0 0013.5 1zm-5 4a.5.5 0 00-1 0v3.882l-1.447 2.894a.5.5 0 10.894.448l1.5-3A.5.5 0 008.5 9V5z"
+                                clip-rule="evenodd" />
+                        </svg>
+                        Let us know if we can contact you
+                    </div>
+                    <p>The Flask Pizza would like to keep you informed about exclusive offers, events and new
+                        product developments in line with our <a href="#">privacy policy</a>. If you would like to be
+                        contacted please tick the box. You can change these preferences at any time.
+                    </p>
+                    <div class="form-group form-check">
+                        <input type="checkbox" class="form-check-input" id="remember">
+                        <label class="form-check-label" for="remember">Yes, please keep me informed</label>
+                    </div>
+                    <input class="btn btn-primary btn-block bg-success" type="submit" value="Sign In">
+                </form>
+            </div>
+
+            <div class="tab-pane fade" id="sign-up" role="tabpanel" aria-labelledby="sign-up-tab">
+                <form class="needs-validation" novalidate action="/register" method="POST">
+                    <div class="form-group">
+                        <input type="text" class="form-control" id="fname" name="fname" placeholder="First name"
+                            required>
+                    </div>
+                    <div class="form-group">
+                        <input type="text" class="form-control" id="lname" name="lname" placeholder="Last name"
+                            required>
+                    </div>
+                    <div class="form-group">
+                        <input type="text" class="form-control" id="email" name="email" placeholder="E-mail address"
+                            required>
+                    </div>
+                    <div class="form-group">
+                        <input type="password" class="form-control" id="password" name="password"
+                            placeholder="Create your password (Must be 8 characters long" required>
+                    </div>
+                    <div class="form-group">
+                        <select class="form-control" id="province" name="province" required>
+                            <option disabled selected value="">Select your province</option>
+                            <option>AB</option>
+                            <option>BC</option>
+                            <option>MB</option>
+                            <option>NB</option>
+                            <option>NL</option>
+                            <option>NL</option>
+                            <option>NT</option>
+                            <option>NS</option>
+                            <option>NU</option>
+                            <option>ON</option>
+                            <option>BE</option>
+                            <option>QC</option>
+                            <option>SK</option>
+                            <option>YT</option>
+                        </select>
+                    </div>
+                    <p>Your registration will be provided in accordance with our <a href="#">terms and conditions</a>.
+                        You accept these terms when you submit your order.</p>
+                    <p>Our newsletters contain our journalism. They may also contain information about new The Economist
+                        Group services and products and external advertising.</p>
+                    <input class="btn btn-primary btn-block bg-success" type="submit" value="Sign Up">
+                </form>
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-4"></div>
+</div>
+
+<script>
+    function validateForm() {
+        let email = /^[A-z]+@[A-z]+\.[A-z]/;
+        if (!email.test(document.getElementById('email').value)) {
+            alert("You have entered an invalid email address.")
+            return false;
+        }
+    }
+</script>
+{% endblock %}
